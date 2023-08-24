@@ -18,9 +18,6 @@ provider "azurerm"{
     features {}
 }
 
-
-  //criando estrutura para o portifolio
-
 resource "azurerm_resource_group" "portifoliotf" {
     name=var.resourcegroup
     location=var.location
@@ -43,12 +40,18 @@ resource "azurerm_linux_web_app" "azwa" {
   site_config  {
     always_on                 = false
     app_command_line          = ""
+    cors {
+   allowed_origins     = ["https://pinguelliportifolio.web.app"]
+   support_credentials = false 
+  }
   }
    app_settings= {
     DOCKER_REGISTRY_SERVER_URL ="https://portifoliocr.azurecr.io"
     DOCKER_REGISTRY_SERVER_USERNAME = "Portifoliocr"
     DOCKER_REGISTRY_SERVER_PASSWORD = "gbKWf3yhCO1GGIpqzFGgnkfEDp5wo6fmcbnuZSWm1d+ACRDNFaT1"
   }
+  
+
 }
 
 resource "azurerm_container_registry" "azcr" {
@@ -72,10 +75,29 @@ resource "azurerm_storage_account" "azsa" {
     environment = "deployment"
   }
 }
+
 resource "azurerm_storage_container" "azsc"{
     name = "portifoliocontainer"
     storage_account_name=azurerm_storage_account.azsa.name
     container_access_type="private"    
 }
+
+/*resource "azurerm_kubernetes_cluster" "akc"{
+  name                ="AKSPortifolio"
+  location            = var.location
+  resource_group_name =var.resourcegroup
+  dns_prefix          = "portifolioks1"
+  sku_tier="Free"
+
+  default_node_pool {
+    name       = "firstnode"
+    node_count = 1
+    vm_size    = "Standard_DS2_v2"
+  }
+    identity {
+    type = "SystemAssigned"
+  }
+
+}*/
 
 
