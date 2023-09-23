@@ -6,6 +6,8 @@
 # logs
 *.log
 
+variables.tf
+
 # Directories
 .terraform/
 .vagrant/

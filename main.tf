@@ -5,11 +5,13 @@ terraform {
         version=">=3.0.0"
     }
   }
+  /*yo need to create a variable.tf document and define yours variables*/
+  /* use this code when you want keep the log changes about your terraform*/
       backend "azurerm" {
-      resource_group_name = "Portifolio"
-      storage_account_name="armazenamentoportifolio"
-      container_name ="tfstate"
-      key="dev.tf.state"
+      resource_group_name = "your resource group name"
+      storage_account_name="your sotrage acount name"
+      container_name ="your container name"
+      key="your key"
 
     }
   
@@ -19,7 +21,7 @@ provider "azurerm"{
 }
 
 resource "azurerm_resource_group" "portifoliotf" {
-    name=var.resourcegroup
+    name="PortifolioTf"
     location=var.location
 }
 
@@ -47,8 +49,8 @@ resource "azurerm_linux_web_app" "azwa" {
   }
    app_settings= {
     DOCKER_REGISTRY_SERVER_URL ="https://portifoliocr.azurecr.io"
-    DOCKER_REGISTRY_SERVER_USERNAME = "Portifoliocr"
-    DOCKER_REGISTRY_SERVER_PASSWORD = "gbKWf3yhCO1GGIpqzFGgnkfEDp5wo6fmcbnuZSWm1d+ACRDNFaT1"
+    DOCKER_REGISTRY_SERVER_USERNAME = var.userDockerRegistry
+    DOCKER_REGISTRY_SERVER_PASSWORD = var.password
   }
   
 
@@ -81,6 +83,8 @@ resource "azurerm_storage_container" "azsc"{
     storage_account_name=azurerm_storage_account.azsa.name
     container_access_type="private"    
 }
+
+/* if you want to build a AKS service use this code!*/
 
 /*resource "azurerm_kubernetes_cluster" "akc"{
   name                ="AKSPortifolio"
