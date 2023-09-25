@@ -18,6 +18,8 @@ Será necessário criar um arquivo variables.tf contendo os seguintes dados:
 
 
 Faça um Fork do repositório e utilize a cópia conforme necessitar.
+
+
 Altere os nomes dos recursos e inclusão/remoção conforme sua necessidade.
 
 ## ℹ️ Dúvidas:
