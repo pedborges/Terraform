@@ -27,10 +27,13 @@ Altere os nomes dos recursos e inclusão/remoção conforme sua necessidade.
 Acesse:
 
 Create an Azure service principal with the Azure CLI
+
 https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2Fazure%2Fazure-resource-manager%2Ftoc.json&view=azure-cli-latest?WT.mc_id=AZ-MVP-5001893
 
 How to: Use the portal to create an Azure AD application and service principal that can access resources
+
 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal?WT.mc_id=AZ-MVP-5001893
 
 Terraform with Azure
+
 https://docs.microsoft.com/en-us/azure/developer/terraform/overview?WT.mc_id=AZ-MVP-5001893
