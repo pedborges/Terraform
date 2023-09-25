@@ -1,5 +1,6 @@
-IaC exemplo de implantação Azure utilizando Hashicorp Terraform
-Este IaC criará os seguintes recursos:
+<h1>IaC exemplo de implantação Azure utilizando Hashicorp Terraform</h1>
+
+## 💻Este IaC criará os seguintes recursos:
 - Um resource group;
 - Um Azure service plan;
 - Um Azure app Service;
@@ -10,31 +11,24 @@ Este IaC criará os seguintes recursos:
 
 
 
-Pré requisitos:
+## ✅ Pré requisitos:
 Será necessário criar um arquivo variables.tf contendo os seguintes dados:
 
-variable "resourcegroup"{
-    default = "your resource group name"
+![image](https://github.com/pedborges/Terraform/assets/110577886/e2dc9667-4f4f-4ee9-b2d5-65096714d800)
 
-}
-variable "location"{
-    default="your selected location"
-}
-variable "password"{
-    default="your container password"
-}
-variable "userDockerRegistry"{
-    default = "you user container registry"
-}
-variable "storageAccountName"{
-    default="your storage account name"
-}
-variable "containerName"{
-    default="your container name"
-}
-variable "storageAccountKey"{
-    default="your storage account key"
-}
 
 Faça um Fork do repositório e utilize a cópia conforme necessitar.
 Altere os nomes dos recursos e inclusão/remoção conforme sua necessidade.
+
+## ℹ️ Dúvidas:
+
+Acesse:
+
+Create an Azure service principal with the Azure CLI
+https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2Fazure%2Fazure-resource-manager%2Ftoc.json&view=azure-cli-latest?WT.mc_id=AZ-MVP-5001893
+
+How to: Use the portal to create an Azure AD application and service principal that can access resources
+https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal?WT.mc_id=AZ-MVP-5001893
+
+Terraform with Azure
+https://docs.microsoft.com/en-us/azure/developer/terraform/overview?WT.mc_id=AZ-MVP-5001893
