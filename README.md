@@ -1,9 +1,9 @@
 <h1>IaC exemplo de implantação Azure utilizando Hashicorp Terraform</h1>
 
 ## 💻Este IaC criará os seguintes recursos:
-- Um resource group;
+- Um Azure Resource Group;
 - Um Azure service plan;
-- Um Azure app Service;
+- Um Azure App Service;
 - Um Azure Container Registry
 - Um Azure Storage Account
 - Um Azure Storage Container
